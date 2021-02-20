@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Demo</title>
+</head>
+<body>
+</body>
+<script>
+const ws = new WebSocket('ws://localhost:8080/');
+ws.onopen = function() {
+    console.log('WebSocket Client Connected');
+    ws.send('Hello, from web client');
+};
+ws.onmessage = function(e) {
+  console.log("Received: '" + e.data + "'");
+};
+</script>
+</html>
